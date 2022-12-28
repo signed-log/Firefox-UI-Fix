@@ -89,8 +89,8 @@
 
 //-- Mixin ---------------------------------------------------------------------
 @mixin _os_menuEmulate($bgRate, $bdRate) {
-  menupopup:not(#BMB_bookmarksPopup) menu[_moz-menuactive="true"],
-  menupopup:not(#BMB_bookmarksPopup) menuitem[_moz-menuactive="true"] {
+  menu[_moz-menuactive="true"],
+  menuitem[_moz-menuactive="true"] {
     background-color: color-mix(in srgb, -moz-menuhover $bgRate, transparent) !important;
     border-color: color-mix(in srgb, -moz-menuhover $bdRate, transparent) !important;
 
@@ -125,8 +125,8 @@
 /*= Windows 10 - Native Menu Active Color =====================================*/
 @include OS($win10) {
   @include Win10_NativeMenu() {
-    menu[_moz-menuactive="true"],
-    menuitem[_moz-menuactive="true"] {
+    menupopup:not([placespopup="true"]) menu[_moz-menuactive="true"],
+    menupopup:not([placespopup="true"]) menuitem[_moz-menuactive="true"] {
       background-color: #91c9f7 !important; // color-mix(in srgb, -moz-menuhover 40%, transparent)
       border-color: transparent !important;
 
